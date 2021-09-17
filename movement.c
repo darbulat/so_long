@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   movement.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By:  <>                                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/17 21:36:38 by                   #+#    #+#             */
+/*   Updated: 2021/09/17 21:36:38 by                  ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "so_long.h"
 
 void	move_left(t_vars *vars)
@@ -12,7 +23,7 @@ void	move_left(t_vars *vars)
 			if (!vars->points)
 				exit(1);
 			else
-				return;
+				return ;
 		}
 		vars->map[vars->y][vars->x] = '0';
 		vars->x--;
@@ -33,7 +44,7 @@ void	move_right(t_vars *vars)
 			if (!vars->points)
 				exit(1);
 			else
-				return;
+				return ;
 		}
 		vars->map[vars->y][vars->x] = '0';
 		vars->x++;
@@ -54,7 +65,7 @@ void	move_up(t_vars *vars)
 			if (!vars->points)
 				exit(1);
 			else
-				return;
+				return ;
 		}
 		vars->map[vars->y][vars->x] = '0';
 		vars->y--;
@@ -75,7 +86,7 @@ void	move_down(t_vars *vars)
 			if (!vars->points)
 				exit(1);
 			else
-				return;
+				return ;
 		}
 		vars->map[vars->y][vars->x] = '0';
 		vars->y++;
@@ -84,7 +95,7 @@ void	move_down(t_vars *vars)
 	}
 }
 
-int		key_hook(int keycode, t_vars *vars)
+int	key_hook(int keycode, t_vars *vars)
 {
 	if (keycode == 65307)
 		close_game(vars);

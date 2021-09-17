@@ -4,7 +4,9 @@ INCS		=	libft -I ./
 
 SRCS		=	main.c 							\
 				movement.c						\
-				gnl/get_next_line.c
+				gnl/get_next_line.c				\
+				map_parser.c					\
+				init_vars.c
 
 HEADERS		= 	so_long.h
 OBJ			=	$(SRCS:.c=.o)

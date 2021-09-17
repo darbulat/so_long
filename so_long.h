@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By:  <>                                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/17 21:35:22 by                   #+#    #+#             */
+/*   Updated: 2021/09/17 21:46:08 by                  ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #ifndef SO_LONG_H
 
 # define SO_LONG_H
@@ -10,7 +21,7 @@
 # include "gnl/get_next_line.h"
 # include "libft/libft.h"
 
-typedef struct	s_vars {
+typedef struct s_vars {
 	void	*mlx;
 	void	*win;
 	void	*img_player;
@@ -38,5 +49,9 @@ void	move_down(t_vars *vars);
 int		key_hook(int keycode, t_vars *vars);
 int		close_game(t_vars *vars);
 void	refresh_window(t_vars *vars);
+void	error_exit(char *msg);
+int		close_game(t_vars *vars);
+int		is_ber(char *file);
+void	parse_map(char *map_path, t_vars *vars);
 
 #endif
