@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:36:48 by                   #+#    #+#             */
-/*   Updated: 2021/09/17 21:36:48 by                  ###   ########.fr       */
+/*   Updated: 2021/10/14 16:55:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -48,7 +48,17 @@ void	refresh_window(t_vars *vars)
 
 int	close_game(t_vars *vars)
 {
+	mlx_destroy_image(vars->mlx, vars->img_player_d);
+	mlx_destroy_image(vars->mlx, vars->img_player_s);
+	mlx_destroy_image(vars->mlx, vars->img_player_w);
+	mlx_destroy_image(vars->mlx, vars->img_player_a);
+	mlx_destroy_image(vars->mlx, vars->img_collectible);
+	mlx_destroy_image(vars->mlx, vars->img_exit);
+	mlx_destroy_image(vars->mlx, vars->img_wall);
 	mlx_destroy_window(vars->mlx, vars->win);
+	mlx_destroy_display(vars->mlx);
+	vars->map = ft_strsfree(vars->map, vars->map_height);
+	free(vars->mlx);
 	exit(0);
 }
 

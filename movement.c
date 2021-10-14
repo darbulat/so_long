@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:36:38 by                   #+#    #+#             */
-/*   Updated: 2021/10/14 15:47:04 by                  ###   ########.fr       */
+/*   Updated: 2021/10/14 16:56:31 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -21,7 +21,7 @@ void	move_left(t_vars *vars)
 		if (vars->map[vars->y][vars->x - 1] == 'E')
 		{
 			if (!vars->points)
-				exit(1);
+				close_game(vars);
 			else
 				return ;
 		}
@@ -44,7 +44,7 @@ void	move_right(t_vars *vars)
 		if (vars->map[vars->y][vars->x + 1] == 'E')
 		{
 			if (!vars->points)
-				exit(1);
+				close_game(vars);
 			else
 				return ;
 		}
@@ -67,7 +67,7 @@ void	move_up(t_vars *vars)
 		if (vars->map[vars->y - 1][vars->x] == 'E')
 		{
 			if (!vars->points)
-				exit(1);
+				close_game(vars);
 			else
 				return ;
 		}
@@ -90,7 +90,7 @@ void	move_down(t_vars *vars)
 		if (vars->map[vars->y + 1][vars->x] == 'E')
 		{
 			if (!vars->points)
-				exit(1);
+				close_game(vars);
 			else
 				return ;
 		}

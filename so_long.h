@@ -64,7 +64,6 @@ int		key_hook(int keycode, t_vars *vars);
 int		close_game(t_vars *vars);
 void	refresh_window(t_vars *vars);
 void	error_exit(char *msg);
-int		close_game(t_vars *vars);
 int		is_ber(char *file);
 void	parse_map(char *map_path, t_vars *vars);
 t_vars	*init_map(char *map_path, t_vars *vars);

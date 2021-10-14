@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
-#include <stdint.h>
 
 void	init_images(t_vars *vars)
 {
