@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:35:22 by                   #+#    #+#             */
-/*   Updated: 2021/09/17 21:46:08 by                  ###   ########.fr       */
+/*   Updated: 2021/10/12 09:30:10 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -53,5 +53,8 @@ void	error_exit(char *msg);
 int		close_game(t_vars *vars);
 int		is_ber(char *file);
 void	parse_map(char *map_path, t_vars *vars);
+t_vars	*init_map(char *map_path, t_vars *vars);
+void	check_valid_symbol(char c);
+void	check_map(t_vars *vars);
 
 #endif

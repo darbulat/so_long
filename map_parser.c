@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:36:46 by                   #+#    #+#             */
-/*   Updated: 2021/09/17 21:36:46 by                  ###   ########.fr       */
+/*   Updated: 2021/10/14 11:04:10 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -15,23 +15,17 @@ void	parse_map(char *map_path, t_vars *vars)
 {
 	int		i;
 	int		fd;
-	char	*line;
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		error_exit("Can't open file");
 	i = 0;
-	line = NULL;
-	while (get_next_line(fd, &line))
+	while (get_next_line(fd, &vars->map[i++]))
 	{
-		vars->map[i] = ft_strdup(line);
-		free(line);
-		if (vars->map[i] == NULL)
-			exit(0);
-		i++;
+		if (vars->map[i - 1] == NULL)
+			error_exit("Error");
 	}
-	vars->map[i] = ft_strdup(line);
-	free(line);
+	vars->map[i] = NULL;
 	close(fd);
 }
 

@@ -1,4 +1,4 @@
-/snap/clion/163/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/bulat/school21/so_long_
+/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/bulat/school21/so_long_
 CMake Error at CMakeLists.txt:8 (add_library):
   The target name "minilibx-linux/libmlx_Linux.a" is reserved or not valid
   for certain CMake features, such as generator expressions, and may result

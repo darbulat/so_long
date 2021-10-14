@@ -6,6 +6,7 @@ SRCS		=	main.c 							\
 				movement.c						\
 				gnl/get_next_line.c				\
 				map_parser.c					\
+				map_checker.c					\
 				init_vars.c
 
 HEADERS		= 	so_long.h
