@@ -36,7 +36,7 @@ void	check_map(t_vars *vars)
 		error_exit("Error");
 	while (++y < vars->map_height)
 	{
-		if (ft_strlen(vars->map[y]) < vars->map_width)
+		if (ft_strlen(vars->map[y]) < (size_t) vars->map_width)
 			error_exit("Error");
 		x = -1;
 		while (++x < vars->map_width)

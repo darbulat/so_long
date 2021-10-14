@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:36:43 by                   #+#    #+#             */
-/*   Updated: 2021/10/14 11:17:53 by                  ###   ########.fr       */
+/*   Updated: 2021/10/14 15:10:25 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -49,6 +49,7 @@ void	init_vars(t_vars *vars)
 	int	x;
 
 	y = -1;
+	x = -1;
 	while (vars->map[++y])
 	{
 		x = -1;
@@ -70,9 +71,9 @@ void	init_vars(t_vars *vars)
 	vars->map_width = x;
 }
 
-size_t	count_rows(char *map_path)
+int	count_rows(char *map_path)
 {
-	size_t	i;
+	int		i;
 	char	*line;
 	int		fd;
 
@@ -92,7 +93,7 @@ size_t	count_rows(char *map_path)
 
 t_vars	*init_map(char *map_path, t_vars *vars)
 {
-	size_t	rows;
+	int	rows;
 
 	rows = count_rows(map_path);
 	vars->map = malloc(sizeof(char *) * (rows + 1));

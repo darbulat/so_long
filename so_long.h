@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:35:22 by                   #+#    #+#             */
-/*   Updated: 2021/10/12 09:30:10 by                  ###   ########.fr       */
+/*   Updated: 2021/10/14 15:34:37 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -20,6 +20,20 @@
 # include <fcntl.h>
 # include "gnl/get_next_line.h"
 # include "libft/libft.h"
+
+# ifdef SO_LONG_IS_MACOS
+#  define KEY_ESC 53
+#  define KEY_W 13
+#  define KEY_S 1
+#  define KEY_A 0
+#  define KEY_D 2
+# else
+#  define KEY_ESC 65307
+#  define KEY_W 119
+#  define KEY_S 115
+#  define KEY_A 97
+#  define KEY_D 100
+# endif
 
 typedef struct s_vars {
 	void	*mlx;

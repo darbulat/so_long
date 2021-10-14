@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:36:38 by                   #+#    #+#             */
-/*   Updated: 2021/09/17 21:36:38 by                  ###   ########.fr       */
+/*   Updated: 2021/10/14 15:47:04 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -29,6 +29,8 @@ void	move_left(t_vars *vars)
 		vars->x--;
 		vars->map[vars->y][vars->x] = 'P';
 		vars->steps++;
+		ft_putnbr_fd(vars->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 }
 
@@ -50,6 +52,8 @@ void	move_right(t_vars *vars)
 		vars->x++;
 		vars->map[vars->y][vars->x] = 'P';
 		vars->steps++;
+		ft_putnbr_fd(vars->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 }
 
@@ -71,6 +75,8 @@ void	move_up(t_vars *vars)
 		vars->y--;
 		vars->map[vars->y][vars->x] = 'P';
 		vars->steps++;
+		ft_putnbr_fd(vars->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 }
 
@@ -92,22 +98,23 @@ void	move_down(t_vars *vars)
 		vars->y++;
 		vars->map[vars->y][vars->x] = 'P';
 		vars->steps++;
+		ft_putnbr_fd(vars->steps, 1);
+		ft_putchar_fd('\n', 1);
 	}
 }
 
 int	key_hook(int keycode, t_vars *vars)
 {
-	if (keycode == 65307)
+	if (keycode == KEY_ESC)
 		close_game(vars);
-	if (keycode == 97)
+	if (keycode == KEY_A)
 		move_left(vars);
-	else if (keycode == 100)
+	else if (keycode == KEY_D)
 		move_right(vars);
-	else if (keycode == 115)
+	else if (keycode == KEY_S)
 		move_down(vars);
-	else if (keycode == 119)
+	else if (keycode == KEY_W)
 		move_up(vars);
-	printf("%d\n", vars->steps);
 	refresh_window(vars);
 	return (0);
 }
