@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 21:36:43 by                   #+#    #+#             */
-/*   Updated: 2021/10/14 15:10:25 by                  ###   ########.fr       */
+/*   Updated: 2021/10/16 17:41:45 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -80,11 +80,13 @@ int	count_rows(char *map_path)
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		error_exit("Can't open map file");
-	while (get_next_line(fd, &line))
+	while (get_next_line(fd, &line) > 0)
 	{
 		i++;
 		free(line);
 	}
+	if (i == 0)
+		return (0);
 	free(line);
 	close(fd);
 	return (i + 1);
@@ -95,6 +97,8 @@ t_vars	*init_map(char *map_path, t_vars *vars)
 	int	rows;
 
 	rows = count_rows(map_path);
+	if (rows == 0)
+		error_exit("Can not open file");
 	vars->map = malloc(sizeof(char *) * (rows + 1));
 	if (vars->map == NULL)
 		error_exit("Malloc error");
